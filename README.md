@@ -62,6 +62,7 @@ Command to give your computer to automatically execute the script
 `chmod a+x ~/Documents/computer/scripts/rclone/log/log-rotate.sh`
 
 Time to set up the automation schedule
+
 `crontab -e`
 
 Paste the following into the editor
