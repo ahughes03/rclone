@@ -1,7 +1,8 @@
-rclone steps to automation
+##RClone Steps to Automation
 
-terminal in your Mac
-first group of commands creates folders for the scripts you'll be implementing
+Terminal in your Mac
+
+First group of commands creates folders for the scripts you'll be implementing
 ```
 export EDITOR=nano
 mkdir ~/Documents/computer
