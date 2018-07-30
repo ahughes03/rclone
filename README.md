@@ -1,4 +1,4 @@
-##RClone Steps to Automation
+Rclone Steps to Automation
 
 Terminal in your Mac
 
