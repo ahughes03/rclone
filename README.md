@@ -30,6 +30,7 @@ exit
 Save and exit the script using "Ctrl+X" then "Y"
 
 Command to give your computer to automatically execute the script
+
 `chmod a+x ~/Documents/computer/scripts/rclone/rclone`
 
 Make a folder and script for a logging script, and enter edit mode
@@ -57,6 +58,7 @@ cd $logdir
 Save and exit the script using "Ctrl+X" then "Y"
 
 Command to give your computer to automatically execute the script
+
 `chmod a+x ~/Documents/computer/scripts/rclone/log/log-rotate.sh`
 
 Time to set up the automation schedule
