@@ -5,7 +5,6 @@ Terminal in your Mac
 First group of commands creates folders for the scripts you'll be implementing
 ```
 export EDITOR=nano
-mkdir ~/Documents/computer
 mkdir ~/Documents/computer/scripts/
 mkdir ~/Documents/computer/scripts/rclone/
 cd ~/Documents/computer/scripts/rclone/
