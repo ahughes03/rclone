@@ -1,19 +1,23 @@
-# rclone steps to automation
-# designates a commented line, meaning it's just information, as opposed to code
+rclone steps to automation
 
-# terminal in your Mac
-# first group of commands creates folders for the scripts you'll be implementing
+terminal in your Mac
+first group of commands creates folders for the scripts you'll be implementing
+```
 export EDITOR=nano
 mkdir ~/Documents/computer
 mkdir ~/Documents/computer/scripts/
 mkdir ~/Documents/computer/scripts/rclone/
 cd ~/Documents/computer/scripts/rclone/
+```
 
-# next command creates a script called "rclone" and enters edit mode
+Next command creates a script called "rclone" and enters edit mode
+```
 touch ~/Documents/computer/scripts/rclone/rclone
 nano ~/Documents/computer/scripts/rclone/rclone
+```
 
-# copy and paste the following into the script
+Copy and paste the following into the script
+```
 #!/bin/bash
 #!/usr/local/bin/rclone
 if pidof -o %PPID -x "rclone"; then
@@ -21,17 +25,21 @@ exit 1
 fi
 /usr/local/bin/rclone move seedbox:downloads/complete/ /Volumes/"Storage 2TB"/"Seedbox rclone"/ --drive-chunk-size 64M --buffer-size 256M --bwlimit 96000 --checkers 16 --transfers 8 --delete-empty-src-dirs --ignore-existing --exclude _unpack/** -u -v --log-file ~/etc/log/rclone-cron.log
 exit
-# save and exit the script using "Ctrl+X" then "Y"
+```
+Save and exit the script using "Ctrl+X" then "Y"
 
-# command to give your computer to automatically execute the script
-chmod a+x ~/Documents/computer/scripts/rclone/rclone
+Command to give your computer to automatically execute the script
+`chmod a+x ~/Documents/computer/scripts/rclone/rclone`
 
-# make a folder and script for a logging script, and enter edit mode
+Make a folder and script for a logging script, and enter edit mode
+```
 mkdir ~/Documents/computer/scripts/rclone/log
 touch ~/Documents/computer/scripts/rclone/log/log-rotate.sh
 nano ~/Documents/computer/scripts/rclone/log/log-rotate.sh
+```
 
-# copy and paste the following into the script
+Copy and paste the following into the script
+```
 #!/bin/bash
 logdir='~/Documents/computer/scripts/rclone/log/'
 cd $logdir
@@ -43,15 +51,20 @@ cd $logdir
 /usr/bin/test -f rclone-cron.log.2 && /bin/mv rclone-cron.log.2 rclone-cron.log.3
 /usr/bin/test -f rclone-cron.log.1 && /bin/mv rclone-cron.log.1 rclone-cron.log.2
 /usr/bin/test -f rclone-cron.log && /bin/mv rclone-cron.log rclone-cron.log.1
-# save and exit the script using "Ctrl+X" then "Y"
+```
 
-# command to give your computer to automatically execute the script
-chmod a+x ~/Documents/computer/scripts/rclone/log/log-rotate.sh
+Save and exit the script using "Ctrl+X" then "Y"
 
-# time to set up the automation schedule
-crontab -e
+Command to give your computer to automatically execute the script
+`chmod a+x ~/Documents/computer/scripts/rclone/log/log-rotate.sh`
 
-# paste the following into the editor
+Time to set up the automation schedule
+`crontab -e`
+
+Paste the following into the editor
+```
 */5 * * * * /bin/bash ~/Documents/computer/scripts/rclone/rclone
 57 23 * * * /bin/bash ~/Documents/computer/scripts/rclone/log/log-rotate.sh
-# save and exit the script using "Ctrl+X" then "Y"
+```
+
+Save and exit the script using "Ctrl+X" then "Y"
