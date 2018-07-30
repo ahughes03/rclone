@@ -24,7 +24,7 @@ Copy and paste the following into the script
 if pidof -o %PPID -x "rclone"; then
 exit 1
 fi
-/usr/local/bin/rclone move seedbox:downloads/complete/ /Volumes/"Storage 2TB"/"Seedbox rclone"/ --drive-chunk-size 64M --buffer-size 256M --bwlimit 96000 --checkers 16 --transfers 8 --delete-empty-src-dirs --ignore-existing --exclude _unpack/** -u -v --log-file ~/etc/log/rclone-cron.log
+/usr/local/bin/rclone move seedbox:downloads/complete/ /Volumes/"Storage 2TB"/"Seedbox rclone"/ --drive-chunk-size 64M --buffer-size 256M --bwlimit 96000 --checkers 16 --transfers 8 --delete-empty-src-dirs --ignore-existing --exclude _unpack/** -u -v --log-file ~/Documents/computer/scripts/rclone/log/log-rotate.sh
 exit
 ```
 Save and exit the script using "Ctrl+X" then "Y"
