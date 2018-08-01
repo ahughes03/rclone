@@ -76,3 +76,9 @@ Paste the following into the editor
 ```
 
 Save and exit the script using "Ctrl+X" then "Y"
+
+To view your transfer logs
+```
+~/Documents/computer/scripts/rclone/log/rclone-cron.log
+```
+"Ctrl+C" will exit the ongoing log
